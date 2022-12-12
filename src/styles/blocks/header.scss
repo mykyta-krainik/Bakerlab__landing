@@ -1,0 +1,121 @@
+.header {
+  height: max-content;
+
+  &__hero {
+    position: relative;
+  }
+
+  &__text {
+    margin: 32px 0 0;
+
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: 144px;
+
+      text-align: left;
+    }
+  }
+
+  &__heading {
+    margin: 46px 0 0;
+
+    font-size: 70px;
+    font-weight: inherit;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    @include onTablet {
+      margin-top: 144px;
+
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+
+      font-size: 140px;
+    }
+  }
+
+  &__hero-background {
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/hero.png);
+
+    @include onTablet {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      z-index: -1;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      width: 590px;
+      height: 590px;
+    }
+  }
+
+  &__learn-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 16px 0;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorOrange;
+
+    border: 2px solid $colorOrange;
+    border-radius: 32px;
+
+    transition: all $animationDuration;
+
+    &:hover {
+      color: #fff;
+      background-color: $colorOrange;
+
+      & .icon--cookie {
+        background-image: url(../images/icons/cookie-hover-active.svg);
+      }
+    }
+
+    &:active {
+      background-color: $colorDarkOrange;
+
+      border-color: $colorDarkOrange;
+    }
+
+    @include onTablet {
+      margin-top: 214px;
+      padding: 22px 0;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+      padding: 30px 0;
+    }
+  }
+}

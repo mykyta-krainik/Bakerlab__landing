@@ -1,0 +1,82 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-image $animationDuration;
+
+  &--menu {
+    background-image: url(../images/icons/menu.svg);
+
+    &:hover {
+      background-image: url(../images/icons/menu-hover.svg);
+    }
+
+    &:active {
+      background-image: url(../images/icons/menu-active.svg);
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/icons/cross.svg);
+
+    &:hover {
+      background-image: url(../images/icons/cross-hover.svg);
+    }
+
+    &:active {
+      background-image: url(../images/icons/cross-active.svg);
+    }
+  }
+
+  &--phone {
+    background-image: url(../images/icons/phone.svg);
+  }
+
+  &--cookie {
+    background-image: url(../images/icons/cookie.svg);
+  }
+
+  &--arrow {
+    background-image: url(../images/icons/arrow.svg);
+  }
+
+  &--facebook {
+    background-image: url(../images/socials/facebook.svg);
+
+    &:hover {
+      background-image: url(../images/socials/facebook-hover.svg);
+    }
+  }
+
+  &--instagram {
+    background-image: url(../images/socials/instagram.svg);
+
+    &:hover {
+      background-image: url(../images/socials/instagram-hover.svg);
+    }
+  }
+
+  &--twitter {
+    background-image: url(../images/socials/twitter.svg);
+
+    &:hover {
+      background-image: url(../images/socials/twitter-hover.svg);
+    }
+  }
+
+  &--18x18 {
+    width: 18px;
+    height: 18px;
+  }
+
+  &--hidden-desktop {
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

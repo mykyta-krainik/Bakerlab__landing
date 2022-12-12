@@ -1,0 +1,132 @@
+.products {
+  &__heading {
+    margin: 0 0 24px;
+  }
+
+  &__subtitle {
+    margin: 0 0 50px;
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__names-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__product-cards {
+    display: none;
+    width: 100%;
+
+    &--selected {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--selected-desktop {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+      }
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    width: max-content;
+
+    font-size: 24px;
+    text-decoration: none;
+    color: $colorBlack;
+
+    transition: color $animationDuration;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    &--desktop {
+      @include onDesktop {
+        position: relative;
+
+        display: inline-block;
+        margin-left: 94px;
+
+        font-size: 20px;
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          top: 50%;
+          left: -24px;
+
+          transform: translate(-75%, -50%);
+
+          display: block;
+          width: 17px;
+          height: 17px;
+
+          border: 2px solid $colorOrange;
+          border-radius: 50%;
+
+          transition: border-color $animationDuration;
+
+          pointer-events: none;
+        }
+      }
+    }
+
+    &--desktop-display--none {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--selected {
+      color: $colorOrange;
+    }
+
+    &--selected-desktop {
+      @include onDesktop {
+        color: $colorOrange;
+      }
+    }
+  }
+}

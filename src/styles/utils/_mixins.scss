@@ -1,6 +1,45 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin underlineAfter {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+
+    background-color: $colorOrange;
+  }
+
+  &:hover::after {
+    width: 100%;
+
+    animation: border $animationDuration linear;
+  }
+
+  &:active::after {
+    background-color: $colorDarkOrange;
+  }
+
+  @keyframes border {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
 }
